@@ -1,0 +1,23 @@
+<form action="" class="form" #form>
+    <label for="marca" class="text-input">Marca
+        <input type="text" name="marca" id="merca" [(ngModel)]="carro.marca"></label>
+
+    <label for="placa" class="text-input">Placa
+        <input type="text" name="placa" id="placa" [(ngModel)]="carro.placa"></label>
+
+    <label for="ano" class="text-input">Ano
+        <input type="number" name="ano" id="ano" [(ngModel)]="carro.ano"></label>
+
+    <div>
+        <label for="popular">
+            <input type="radio" id="popular" name="tipo" value="popular" [(ngModel)]="carro.tipo" />Popular</label>
+
+        <label for="luxo">
+            <input type="radio" id="luxo" name="tipo" value="luxo" [(ngModel)]="carro.tipo" />Luxo</label>
+
+        <label for="carga">
+            <input type="radio" id="carga" name="tipo" value="carga" [(ngModel)]="carro.tipo" />Carga</label>
+    </div>
+    <button type="button" (click)="addCar(carro, form)" [disabled]="carro.marca == null || carro.placa == null || carro.ano == null || carro.tipo == null"> Salvar</button>
+
+</form>

@@ -1,0 +1,21 @@
+<section>
+    <table>
+        <thead>
+            <th>Marca</th>
+            <th>Placa</th>
+            <th>Ano</th>
+            <th>Tipo</th>
+            <th>Funções</th>
+        </thead>
+        <tr *ngFor="let carro of listCars; let i = index">
+            <td>{{carro.marca}}</td>
+            <td>{{carro.placa}}</td>
+            <td>{{carro.ano}}</td>
+            <td [ngClass]="carro.tipo">{{carro.tipo}}</td>
+            <td>
+                <img src="../../../../../assets/icones/editar.png" alt="" width="15px">
+                <img src="../../../../../assets/icones/excluir.png" alt="" width="15px" (click)="deleteItem(i)">
+            </td>
+        </tr>
+    </table>
+</section>
