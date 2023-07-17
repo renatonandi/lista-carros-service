@@ -25,4 +25,16 @@ export class ServiceService {
     this.listCars.splice(index, 1);
   }
 
+  public carroSelecionado(carro:Carro, i: number){
+    let carroSelecionado: Carro = {
+      marca: carro.marca,
+      placa: carro.placa,
+      ano: carro.ano,
+      tipo: carro.tipo
+    }
+    
+    this.emitEvent.emit([carroSelecionado, i]);
+
+  }
+
 }

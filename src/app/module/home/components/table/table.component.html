@@ -13,7 +13,7 @@
             <td>{{carro.ano}}</td>
             <td [ngClass]="carro.tipo">{{carro.tipo}}</td>
             <td>
-                <img src="../../../../../assets/icones/editar.png" alt="" width="15px">
+                <img src="../../../../../assets/icones/editar.png" alt="" width="15px" (click)="editarCarro(carro, i)">
                 <img src="../../../../../assets/icones/excluir.png" alt="" width="15px" (click)="deleteItem(i)">
             </td>
         </tr>

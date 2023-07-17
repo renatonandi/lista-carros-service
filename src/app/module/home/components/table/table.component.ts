@@ -20,4 +20,9 @@ export class TableComponent implements OnInit{
     this.service.deleteCar(index);
   }
 
+  public editarCarro(carro:Carro, i: number){
+    this.service.carroSelecionado(carro, i);
+
+  }
+
 }

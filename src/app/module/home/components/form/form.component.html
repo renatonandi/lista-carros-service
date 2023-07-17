@@ -18,6 +18,9 @@
         <label for="carga">
             <input type="radio" id="carga" name="tipo" value="carga" [(ngModel)]="carro.tipo" />Carga</label>
     </div>
-    <button type="button" (click)="addCar(carro, form)" [disabled]="carro.marca == null || carro.placa == null || carro.ano == null || carro.tipo == null"> Salvar</button>
+    <button type="button" (click)="addCar(carro, form)" *ngIf="!this.edit" [disabled]="carro.marca == null || carro.placa == null || carro.ano == null || carro.tipo == null || edit"> Salvar</button>
+    <div *ngIf="this.edit">
+        <button class="button" type="button" (click)="editarCarro(carro, form)" [disabled]="carro.marca == null || carro.placa == null || carro.ano == null || carro.tipo == null">Editar</button>
+    </div>
 
 </form>
